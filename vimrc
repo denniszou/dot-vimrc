@@ -9,12 +9,30 @@ filetype plugin indent on
 " enable syntax hightlight and completion
 syntax on
 
+let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+" old vim-powerline symbols
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_symbols.whitespace = 'Ξ'
+
+let g:neocomplete#enable_at_startup = 1
+
 "--------
 " Vim UI
 "--------
 " color scheme
-set background=dark
-color solarized
+" set background=dark
+" color solarized
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -57,7 +75,7 @@ set shiftwidth=4    " indent width
 " set smarttab
 set expandtab       " expand tab to space
 
-autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+" autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
